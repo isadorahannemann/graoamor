@@ -15,6 +15,19 @@ body {
   line-height: 1.5;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
 /* HEADER E NAV */
 
 header {
@@ -23,14 +36,47 @@ header {
   padding: 15px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
   font-weight: bold;
   font-size: 28px;
   letter-spacing: 1px;
   margin-left: 0;
+  margin-bottom: 40px;
   transition: margin-left 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #DB9C53;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  color: #555;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.header-icon img {
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.header-icon img:hover {
+  filter: invert(63%) sepia(20%) saturate(3000%) hue-rotate(9deg) brightness(95%) contrast(70%);
 }
 
 .logo {
@@ -56,6 +102,7 @@ nav {
   gap: 35px;
   font-weight: bold;
   font-size: 1.1rem;
+  
 }
 
 nav a {
@@ -80,6 +127,7 @@ main {
   margin: 50px auto;
   padding: 0 20px 50px;
   text-align: center;
+  flex: 1; 
 }
 
 main h2 {
@@ -161,6 +209,24 @@ section {
   }
 }
 
+ @media (max-width: 480px) {
+  main {
+    padding: 20px 30px;
+  }
+  header h1 {
+    font-size: 28px;
+  }
+  header p {
+    font-size: 16px;
+  }
+  .service h3 {
+    font-size: 20px;
+  }
+  .service p {
+    font-size: 14px;
+  }
+}
+
 /* BOTÕES */
 
 button {
@@ -202,7 +268,6 @@ button:focus {
   font-style: normal;
 }
 
-
 /* Footer */
 
 footer {
@@ -212,8 +277,27 @@ footer {
       padding: 15px 10px;
       font-size: 14px;
       letter-spacing: 0.5px;
-      position: fixed;
       bottom: 0;
       width: 100%;
       transition: margin-left 0.3s ease;
+    }
+
+/* Service */
+
+    .service {
+      background: #f9f9f9;
+      border-left: 5px solid #DB9C53;
+      margin-bottom: 25px;
+      padding: 20px 25px;
+      border-radius: 5px;
+    }
+    .service h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #575f47;
+    }
+    .service p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #2d3127;
     }
